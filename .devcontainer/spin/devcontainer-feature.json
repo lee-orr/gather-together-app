@@ -1,0 +1,11 @@
+{
+    "name": "Fermyon Spin",
+    "id": "spin",
+    "version": "0.0.1",
+    "description": "A hello world feature",
+    "options": {
+    },
+    "installsAfter": [
+        "devwasm.azurecr.io/dev-wasm/dev-wasm-feature/rust-wasi:0"
+    ]
+}
