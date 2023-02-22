@@ -6,6 +6,7 @@ services:
   backend:
     build: sign-management-api
     command: cargo watch -x run
+    working_dir: /code
     volumes:
       - ./sign-management-api:/code
       - backend-cache:/code/target
@@ -13,6 +14,7 @@ services:
   admin:
     image: node:buster
     command: npm install && npm run start
+    working_dir: /code
     volumes:
       - ./admin-panel:/code
       - admin-cache:/code/node_modules
@@ -20,6 +22,7 @@ services:
   delivery:
     image: node:buster
     command: npm install && npm run start
+    working_dir: /code
     volumes:
       - ./volunteer-app:/code
       - delivery-cache:/code/node_modules
