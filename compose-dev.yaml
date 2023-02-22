@@ -2,21 +2,21 @@ version: '3.8'
 services:
   backend:
     build: sign-management-api
-    command: sleep infinity
+    command: cargo watch -x run
     volumes:
       - ./sign-management-api:/code
       - backend-cache:/code/target
 
   admin:
     image: node:buster
-    command: sleep infinity
+    command: npm install && npm run start
     volumes:
       - ./admin-panel:/code
       - admin-cache:/code/node_modules
   
   delivery:
     image: node:buster
-    command: sleep infinity
+    command: npm install && npm run start
     volumes:
       - ./volunteer-app:/code
       - delivery-cache:/code/node_modules
