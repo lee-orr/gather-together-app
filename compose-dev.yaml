@@ -1,5 +1,8 @@
 version: '3.8'
 services:
+  editor:
+      image: gitpod/workspace-full
+      command: sleep infinity
   backend:
     build: sign-management-api
     command: cargo watch -x run
