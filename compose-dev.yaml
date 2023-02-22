@@ -1,0 +1,47 @@
+version: '3.8'
+services:
+  backend:
+    build: sign-management-api
+    command: sleep infinity
+    ports:
+      - 3000:3000
+    volumes:
+      - ./sign-management-api:/code
+      - backend-cache:/code/target
+
+  admin:
+    image: node:buster
+    command: sleep infinity
+    volumes:
+      - ./admin-panel:/code
+      - admin-cache:/code/node_modules
+    ports:
+      - 19000:19000
+  
+  delivery:
+    image: node:buster
+    command: sleep infinity
+    volumes:
+      - ./volunteer-app:/code
+      - delivery-cache:/code/node_modules
+    ports:
+      - 19001:19001
+
+  db:
+    image: mariadb:latest
+    restart: unless-stopped
+    environment:
+      MARIADB_ROOT_PASSWORD: password
+  
+  adminer:
+    image: adminer
+    restart: unless-stopped
+    ports:
+      - 8888:8080
+
+
+volumes:
+  backend-cache: {}
+  admin-cache: {}
+  delivery-cache: {}
+  db-data: {}
