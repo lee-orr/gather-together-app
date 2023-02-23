@@ -1,0 +1,19 @@
+{
+    "name": "host_config",
+    "cluster_seed": "SCAAXUXZNTS6SG5EMMR6WRTLQ3HU5A6RQH67YI7WGS3WCZYYYFWHM45WG4",
+    "ctl_host": "nats",
+    "ctl_port": 4222,
+    "ctl_jwt": "",
+    "ctl_seed": "",
+    "ctl_credsfile": null,
+    "ctl_timeout": 2,
+    "ctl_lattice_prefix": "default",
+    "rpc_host": "nats",
+    "rpc_port": 4222,
+    "rpc_jwt": "",
+    "rpc_seed": "",
+    "rpc_credsfile": null,
+    "rpc_timeout": 2000,
+    "rpc_lattice_prefix": "default"
+  }
+  

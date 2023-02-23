@@ -1,9 +1,11 @@
 version: '3.8'
 services:
   editor:
-      build:
-        dockerfile: editor.Dockerfile
-      command: sleep infinity
+    build:
+      dockerfile: editor.Dockerfile
+    command: sleep infinity
+    volumes:
+      - ./.wash:/root/.wash
 
   db:
     image: mariadb:latest
