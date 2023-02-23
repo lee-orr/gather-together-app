@@ -8,7 +8,7 @@ services:
     command: cargo watch -x run
     working_dir: /code
     volumes:
-      - ./sign-management-api:/code
+      - ./sign-management-api:/code:ro
       - backend-cache:/code/target
 
   admin:
@@ -16,7 +16,7 @@ services:
     command: npm install && npm run start
     working_dir: /code
     volumes:
-      - ./admin-panel:/code
+      - ./admin-panel:/code:ro
       - admin-cache:/code/node_modules
   
   delivery:
@@ -24,7 +24,7 @@ services:
     command: npm install && npm run start
     working_dir: /code
     volumes:
-      - ./volunteer-app:/code
+      - ./volunteer-app:/code:ro
       - delivery-cache:/code/node_modules
 
   db:
