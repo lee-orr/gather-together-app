@@ -2,7 +2,6 @@ version: '3.8'
 services:
   editor:
       build:
-        context: development
         dockerfile: editor.Dockerfile
       command: sleep infinity
   backend:
