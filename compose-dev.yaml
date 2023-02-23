@@ -14,14 +14,14 @@ services:
 
   admin:
     image: node:buster
-    command: npm install && npm run start
+    command: npm install; npm run start
     working_dir: /code
     volumes:
       - ./admin-panel:/code:ro
   
   delivery:
     image: node:buster
-    command: npm install && npm run start
+    command: npm install; npm run start
     working_dir: /code
     volumes:
       - ./volunteer-app:/code:ro
