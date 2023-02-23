@@ -9,7 +9,6 @@ services:
     working_dir: /code
     volumes:
       - ./sign-management-api:/code:ro
-      - backend-cache:/code/target
 
   admin:
     image: node:buster
@@ -17,7 +16,6 @@ services:
     working_dir: /code
     volumes:
       - ./admin-panel:/code:ro
-      - admin-cache:/code/node_modules
   
   delivery:
     image: node:buster
@@ -25,7 +23,6 @@ services:
     working_dir: /code
     volumes:
       - ./volunteer-app:/code:ro
-      - delivery-cache:/code/node_modules
 
   db:
     image: mariadb:latest
