@@ -1,7 +1,9 @@
 version: '3.8'
 services:
   editor:
-      image: gitpod/workspace-full
+      build:
+        context: development
+        dockerfile: editor.Dockerfile
       command: sleep infinity
   backend:
     build: sign-management-api
@@ -38,7 +40,4 @@ services:
 
 
 volumes:
-  backend-cache: {}
-  admin-cache: {}
-  delivery-cache: {}
   db-data: {}
