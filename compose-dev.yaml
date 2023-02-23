@@ -9,21 +9,21 @@ services:
     command: cargo watch -x run
     working_dir: /code
     volumes:
-      - ./sign-management-api:/code:ro
+      - ./sign-management-api:/code
 
   admin:
     image: node:buster
     command: npm install; npm run start
     working_dir: /code
     volumes:
-      - ./admin-panel:/code:ro
+      - ./admin-panel:/code
   
   delivery:
     image: node:buster
     command: npm install; npm run start
     working_dir: /code
     volumes:
-      - ./volunteer-app:/code:ro
+      - ./volunteer-app:/code
 
   db:
     image: mariadb:latest
