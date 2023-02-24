@@ -1,0 +1,15 @@
+spin_version = "1"
+authors = ["lee-orr <lee-orr@users.noreply.github.com>"]
+description = ""
+name = "message-responders"
+trigger = { type = "redis", address = "redis://redis:6379" }
+version = "0.1.0"
+
+[[component]]
+id = "message-responders"
+source = "target/wasm32-wasi/release/message_responders.wasm"
+allowed_http_hosts = []
+[component.trigger]
+channel = "events"
+[component.build]
+command = "cargo build --target wasm32-wasi --release"
