@@ -1,12 +1,5 @@
 version: '3.8'
 services:
-  editor:
-    build:
-      dockerfile: editor.Dockerfile
-    command: sleep infinity
-    volumes:
-      - ./.wash:/root/.wash
-
   db:
     image: mariadb:latest
     restart: unless-stopped
@@ -78,6 +71,19 @@ services:
     environment:
       - WADM_NATS_HOST=nats
       - WADM_REDIS_HOST=redis
+
+  editor:
+    build:
+      dockerfile: editor.Dockerfile
+    command: sleep infinity
+    environment:
+      WASMCLOUD_RPC_HOST: nats
+      WASMCLOUD_CTL_HOST: nats
+      WASMCLOUD_PROV_RPC_HOST: nats
+      OTEL_TRACES_EXPORTER: otlp
+      OTEL_EXPORTER_OTLP_ENDPOINT: http://tempo:55681
+    volumes:
+      - ./.wash:/root/.wash
 
 
 volumes:
