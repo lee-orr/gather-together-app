@@ -3,6 +3,8 @@ services:
   devcontainer:
     image: mcr.microsoft.com/devcontainers/typescript-node:0-18
     command: sleep infinity
+    volumes:
+      - ../:/workspace
     ports:
       - 19000:19000
       - 19001:19001
