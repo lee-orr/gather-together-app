@@ -1,0 +1,9 @@
+procs:
+  admin:
+    shell: "npm run admin"
+  volunteer:
+    shell: "npm run volunteer"
+  bacon:
+    shell: "bacon"
+  api:
+    shell: "cargo watch -x \"run\""

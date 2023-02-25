@@ -1,9 +1,8 @@
 {
     "scripts": {
-        "dev": "npx concurrently \"npm:spin\" \"npm:admin\" \"npm:volunteer\"",
         "spin": "cd sign-management-api && cargo watch --poll -s \"spin build --up\"",
-        "admin": "cd admin-panel && npm run start",
-        "volunteer": "cd volunteer-app && npm run start"
+        "admin": "cd admin-panel && npm install && npm run start",
+        "volunteer": "cd volunteer-app && npm install && npm run start"
     },
     "devDependencies": {
         "concurrently": "*"
