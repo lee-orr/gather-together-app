@@ -2,8 +2,6 @@ version: '3.8'
 services:
   devcontainer:
     image: mcr.microsoft.com/devcontainers/typescript-node:0-18
-    volumes:
-      - ../:/workspace
     command: sleep infinity
     ports:
       - 19000:19000
