@@ -1,3 +1,4 @@
+
 procs:
   admin:
     shell: "npm run admin"
@@ -6,4 +7,4 @@ procs:
   bacon:
     shell: "bacon"
   api:
-    shell: "cargo watch -x \"run\""
+    shell: "cargo watch -w ./api -x \"run\""
