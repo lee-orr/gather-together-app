@@ -4,7 +4,9 @@ procs:
     shell: "npm run admin"
   volunteer:
     shell: "npm run volunteer"
-  bacon:
+  api-bacon:
     shell: "bacon"
+    cwd: "./api"
   api:
-    shell: "cargo watch -w ./api -x \"run\""
+    shell: "cargo watch -s \"spin build && spin up\""
+    cwd: "./api"
