@@ -2,7 +2,7 @@ spin_version = "1"
 authors = ["lee-orr <lee-orr@users.noreply.github.com>"]
 description = ""
 name = "messaging-backend"
-trigger = { type = "redis", address = "redis://localhost:6379" }
+trigger = { type = "redis", address = "redis://redis:6379" }
 version = "0.1.0"
 
 [[component]]
