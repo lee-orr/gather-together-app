@@ -2,6 +2,7 @@
 pub enum SignRequestCommand {
     RequestSigns {
         pub id: ulid::Ulid,
+        pub contact: ulid::Ulid,
         pub sign_type: String,
         pub num_signs: usize,
         pub delivery_address: String,
@@ -9,6 +10,7 @@ pub enum SignRequestCommand {
     },
     AdjustSignRequest {
         pub id: ulid::Ulid,
+        pub contact: Option<ulid::Ulid>,
         pub sign_type: Option<String>,
         pub num_signs: Option<usize>,
         pub delivery_address: Option<String>,
