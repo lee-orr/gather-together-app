@@ -52,7 +52,7 @@ pub enum SignRequestCommand {
     },
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, Clone, PartialEq, Eq)]
 pub enum SignAmount {
     All,
     None,
