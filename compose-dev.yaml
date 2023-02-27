@@ -1,13 +1,14 @@
 version: '3.8'
 services:
   devcontainer:
-    image: mcr.microsoft.com/devcontainers/typescript-node:0-18
+    dockerfile: Dockerfile
     command: sleep infinity
     volumes:
       - ../:/workspace
     ports:
       - 19000:19000
       - 19001:19001
+      - 3000:3000
 
   redis:
     image: redis:latest
@@ -15,6 +16,9 @@ services:
     ports:
       - 6379:6379
 
+  gcloud:
+    image: gcr.io/google.com/cloudsdktool/google-cloud-cli:emulators
+    restart: unless-stopped
 
   db:
     image: mariadb:latest

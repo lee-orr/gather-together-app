@@ -1,6 +1,0 @@
-{
-    "rust-analyzer.linkedProjects": [
-        "api/Cargo.toml",
-        "messaging-backend/Cargo.toml"
-    ]
-}

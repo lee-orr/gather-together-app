@@ -6,13 +6,5 @@ procs:
     shell: "npm run volunteer"
   api-bacon:
     shell: "bacon"
-    cwd: "./api"
   api:
-    shell: "cargo watch -s \"spin build && spin up\""
-    cwd: "./api"
-  messaging-bacon:
-    shell: "bacon"
-    cwd: "./messaging-backend"
-  messaging:
-    shell: "cargo watch -s \"spin build && spin up\""
-    cwd: "./messaging-backend"
+    shell: "cargo watch -x run"
