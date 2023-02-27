@@ -1,8 +1,11 @@
-use serde::{Deserialize, Serialize};
+use serde::{Serialize, Deserialize};
+
+use super::commands::SignAmount;
+
 
 #[derive(Debug, Serialize, Deserialize)]
-pub enum SignRequestCommand {
-    Request {
+pub enum SignRequestEvent {
+    Requested {
         id: ulid::Ulid,
         contact: ulid::Ulid,
         sign_type: String,
@@ -10,7 +13,7 @@ pub enum SignRequestCommand {
         delivery_address: String,
         notes: Option<String>,
     },
-    AdjustRequest {
+    RequestAdjusted {
         id: ulid::Ulid,
         contact: Option<ulid::Ulid>,
         sign_type: Option<String>,
@@ -18,43 +21,36 @@ pub enum SignRequestCommand {
         delivery_address: Option<String>,
         notes: Option<String>,
     },
-    ConfirmDelivery {
+    Delivered {
         id: ulid::Ulid,
         agent: ulid::Ulid,
         notes: Option<String>,
         num_delivered: SignAmount,
     },
-    RequestRemoval {
+    RemovalRequested {
         id: ulid::Ulid,
         notes: Option<String>,
         num_signs: SignAmount,
     },
-    ConfirmRemoval {
+    Removed {
         id: ulid::Ulid,
         agent: ulid::Ulid,
         notes: Option<String>,
         num_removed: SignAmount,
     },
-    MarkFailedDelivery {
+    DeliveryFailed {
         id: ulid::Ulid,
-        agent: ulid::Ulid,
+        agent: ulid::Ulid,        
         notes: Option<String>,
         num_failed_delivery: SignAmount,
     },
-    CancelRequest {
+    RequestCancelled {
         id: ulid::Ulid,
     },
-    MarkFailedRemoval {
+    RemovalFailed {
         id: ulid::Ulid,
         agent: ulid::Ulid,
         notes: Option<String>,
         num_failed_retrieval: SignAmount,
     },
-}
-
-#[derive(Debug, Serialize, Deserialize)]
-pub enum SignAmount {
-    All,
-    None,
-    Some(usize),
 }

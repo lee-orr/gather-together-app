@@ -15,4 +15,4 @@ async-trait = "*"
 axum = "*"
 tokio = { version = "*", features = ["full"]}
 
-ulid-lite = "*"
+ulid = { version = "*", features = ["serde"]}
