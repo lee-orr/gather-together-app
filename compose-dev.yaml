@@ -1,7 +1,8 @@
 version: '3.8'
 services:
   devcontainer:
-    dockerfile: Dockerfile
+    build: 
+      dockerfile: Dockerfile
     command: sleep infinity
     volumes:
       - ../:/workspace
@@ -25,9 +26,3 @@ services:
     restart: unless-stopped
     environment:
       MARIADB_ROOT_PASSWORD: password
-  
-  adminer:
-    image: adminer
-    restart: unless-stopped
-    ports:
-      - 8888:8080
