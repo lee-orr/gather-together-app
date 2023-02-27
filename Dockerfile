@@ -11,6 +11,10 @@ EOF
 
 RUN cargo install cargo-watch
 
+RUN rustup component add clippy
+RUN rustup component add rustfmt
+
 RUN <<EOF
 rtx install nodejs@19
+echo 'eval "$(~/bin/rtx activate bash)"' >> ~/.bashrc
 EOF
