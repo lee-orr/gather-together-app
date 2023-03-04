@@ -49,3 +49,5 @@ RUN apt-get install -y git
 
 RUN rustup target add wasm32-unknown-unknown
 RUN rustup target add wasm32-wasi
+
+ENV CARGO_TARGET_DIR="./target"
