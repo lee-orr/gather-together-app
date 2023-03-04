@@ -1,9 +1,13 @@
 [workspace]
 
-members = ["hello-test"]
+members = ["frontend/*"]
 
 
 [profile.release]
 # Optimize for small code size
 lto = true
 opt-level = "s"
+
+[workspace.dependencies]
+anyhow = "1"
+serde = "1"
