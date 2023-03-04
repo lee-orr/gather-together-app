@@ -3,17 +3,9 @@
 {
 	"name": "Node.js & TypeScript",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-    "dockerComposeFile": "docker-compose.yaml",
+    "dockerComposeFile": "../compose-dev.yaml",
     "service": "devcontainer",
     "workspaceFolder": "/workspace",
-	"features": {
-		"ghcr.io/devcontainers/features/rust:1": {},
-		"devwasm.azurecr.io/dev-wasm/dev-wasm-feature/rust-wasi:0": {},
-		"./spin": {},
-		"./cargo-watch": {},
-		"./cli-tools": {},
-		"./helix": {}
-	}
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
