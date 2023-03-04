@@ -18,3 +18,5 @@ RUN <<EOF
 rtx install nodejs@19
 echo 'eval "$(~/bin/rtx activate bash)"' >> ~/.bashrc
 EOF
+
+RUN cargo install wash-cli
