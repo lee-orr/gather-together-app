@@ -20,3 +20,4 @@ echo 'eval "$(~/bin/rtx activate bash)"' >> ~/.bashrc
 EOF
 
 RUN cargo install wash-cli
+RUN bash -c "$(curl -fsSL https://cosmonic.sh/install.sh)"

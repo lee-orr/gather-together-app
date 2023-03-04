@@ -17,10 +17,6 @@ services:
     ports:
       - 6379:6379
 
-  gcloud:
-    image: gcr.io/google.com/cloudsdktool/google-cloud-cli:emulators
-    restart: unless-stopped
-
   db:
     image: mariadb:latest
     restart: unless-stopped
