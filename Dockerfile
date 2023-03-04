@@ -1,6 +1,18 @@
 FROM ubuntu:rolling
 
-RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+# Update default packages
+RUN apt-get update
+
+# Get Ubuntu packages
+RUN apt-get install -y \
+    build-essential \
+    curl \
+    pkg-config \
+    libssl-dev \
+    wget
+
+RUN curl https://sh.rustup.rs -sSf | bash -s -- -y
+ENV PATH="/root/.cargo/bin:${PATH}"
 
 RUN cargo install cargo-watch
 RUN rustup component add clippy
@@ -31,4 +43,6 @@ EOF
 
 RUN cargo install wash-cli
 RUN bash -c "$(curl -fsSL https://cosmonic.sh/install.sh)"
-RUN echo "export PATH=\"/root/.cosmo/bin:\${PATH}\"" >> "${HOME}/.bashrc" && source "${HOME}/.bashrc"
+ENV PATH="/root/.cosmo/bin:${PATH}"
+
+RUN apt-get install -y git
