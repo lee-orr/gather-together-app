@@ -1,3 +1,9 @@
 [workspace]
 
-members = ["api"]
+members = ["hello-test"]
+
+
+[profile.release]
+# Optimize for small code size
+lto = true
+opt-level = "s"

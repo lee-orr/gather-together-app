@@ -46,3 +46,6 @@ RUN bash -c "$(curl -fsSL https://cosmonic.sh/install.sh)"
 ENV PATH="/root/.cosmo/bin:${PATH}"
 
 RUN apt-get install -y git
+
+RUN rustup target add wasm32-unknown-unknown
+RUN rustup target add wasm32-wasi
