@@ -41,7 +41,13 @@ rtx install nodejs@19
 echo 'eval "$(rtx activate bash)"' >> ~/.bashrc
 EOF
 
-RUN cargo install wash-cli
+RUN <<EOF
+cargo install wash-cli
+wash ctx new docker
+wash ctx default docker
+EOF
+COPY wash.docker.json /root/.wash/contexts/docker.json
+
 RUN bash -c "$(curl -fsSL https://cosmonic.sh/install.sh)"
 ENV PATH="/root/.cosmo/bin:${PATH}"
 

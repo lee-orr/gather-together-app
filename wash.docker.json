@@ -1,0 +1,1 @@
+{"name":"host_config","cluster_seed":"","ctl_host":"nats","ctl_port":4222,"ctl_jwt":"","ctl_seed":"","ctl_credsfile":null,"ctl_timeout":2000,"lattice_prefix":"default","js_domain":null,"rpc_host":"nats","rpc_port":4222,"rpc_jwt":"","rpc_seed":"","rpc_credsfile":null,"rpc_timeout":2000}
